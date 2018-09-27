@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B21BC251-980F-457F-B8FA-C55D4938E62C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>erasmDB</RootNamespace>
+    <AssemblyName>erasmDB</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>assets\flag_yellow_high_1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=3.1.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\agVyroba\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MSDN.HtmlEditorControl">
+      <HintPath>..\WinformsHTMLEditorControl\C#\HtmlEditorControl\bin\Debug\MSDN.HtmlEditorControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dataDomains\dataWordExport.cs" />
+    <Compile Include="dataDomains\domainActivity.cs" />
+    <Compile Include="dataDomains\domainListOfValues.cs" />
+    <Compile Include="dataDomains\domainProject.cs" />
+    <Compile Include="dataDomains\domainPerson.cs" />
+    <Compile Include="dataDomains\domainOrganization.cs" />
+    <Compile Include="dataDomains\tableChanges.cs" />
+    <Compile Include="dbModel\modelData.cs" />
+    <Compile Include="dbModel\modelMobility.cs" />
+    <Compile Include="dbModel\modelProjectActivityVariation.cs" />
+    <Compile Include="dbModel\modelDistanceBand.cs" />
+    <Compile Include="dbModel\modelProjectVariationOrganization.cs" />
+    <Compile Include="dbModel\modelProjectTopic.cs" />
+    <Compile Include="dbModel\modelNationalAgency.cs" />
+    <Compile Include="dbModel\modelOrganization.cs" />
+    <Compile Include="dbModel\modelOrganizationDescription.cs" />
+    <Compile Include="dbModel\modelOrganizationPerson.cs" />
+    <Compile Include="dbModel\modelOrganizationType.cs" />
+    <Compile Include="dbModel\modelCountry.cs" />
+    <Compile Include="dbModel\modelActivity.cs" />
+    <Compile Include="dbModel\modelProjectVariation.cs" />
+    <Compile Include="dbModel\modelProjectActivity.cs" />
+    <Compile Include="dbModel\modelProject.cs" />
+    <Compile Include="dbModel\modelActivityType.cs" />
+    <Compile Include="dbModel\modelLanguage.cs" />
+    <Compile Include="dbModel\modelClient.cs" />
+    <Compile Include="dbModel\modelTopic.cs" />
+    <Compile Include="dbModel\modelRole.cs" />
+    <Compile Include="dbModel\modelPerson.cs" />
+    <Compile Include="dbModel\noDB\modelField.cs" />
+    <Compile Include="dbModel\noDB\modelMailMargeVariables.cs" />
+    <Compile Include="dbModel\noDB\modelProjectCall.cs" />
+    <Compile Include="formStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formStart.Designer.cs">
+      <DependentUpon>formStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formSync.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSync.Designer.cs">
+      <DependentUpon>formSync.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formWordTemplateEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formWordTemplateEdit.Designer.cs">
+      <DependentUpon>formWordTemplateEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formMandate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formMandate.Designer.cs">
+      <DependentUpon>formMandate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formedit\formEditCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formedit\formEditCountry.Designer.cs">
+      <DependentUpon>formEditCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formedit\formEditMobility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formedit\formEditMobility.Designer.cs">
+      <DependentUpon>formEditMobility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formedit\formEditNationalAgency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formedit\formEditNationalAgency.Designer.cs">
+      <DependentUpon>formEditNationalAgency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formedit\formEditOrganization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formedit\formEditOrganization.Designer.cs">
+      <DependentUpon>formEditOrganization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formedit\formEditProjectActivityVariation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formedit\formEditProjectActivityVariation.Designer.cs">
+      <DependentUpon>formEditProjectActivityVariation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formedit\formEditProjectVariation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formedit\formEditProjectVariation.Designer.cs">
+      <DependentUpon>formEditProjectVariation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formedit\formEditProjectActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formedit\formEditProjectActivity.Designer.cs">
+      <DependentUpon>formEditProjectActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formedit\formEditOrganizationDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formedit\formEditOrganizationDescription.Designer.cs">
+      <DependentUpon>formEditOrganizationDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formedit\formEditProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formedit\formEditProject.Designer.cs">
+      <DependentUpon>formEditProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formedit\formEditPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formedit\formEditPerson.Designer.cs">
+      <DependentUpon>formEditPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formMain.Designer.cs">
+      <DependentUpon>formMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formMessageBox.Designer.cs">
+      <DependentUpon>formMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formSelectOrganization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSelectOrganization.Designer.cs">
+      <DependentUpon>formSelectOrganization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSelect.Designer.cs">
+      <DependentUpon>formSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="helpers\hostWWWPing.cs" />
+    <Compile Include="helpers\IconButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="helpers\odcFile.cs" />
+    <Compile Include="helpers\PetaPoco.cs" />
+    <Compile Include="gdata.cs" />
+    <Compile Include="helpers\iniFile.cs" />
+    <Compile Include="helpers\hostSQLPing.cs" />
+    <Compile Include="ChangesInfo.cs" />
+    <Compile Include="panels\panelDistanceBand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panels\panelDistanceBand.Designer.cs">
+      <DependentUpon>panelDistanceBand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panels\panelLanguage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panels\panelLanguage.Designer.cs">
+      <DependentUpon>panelLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panels\panelCountry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panels\panelCountry.Designer.cs">
+      <DependentUpon>panelCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panels\panelNationalAgency.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panels\panelNationalAgency.Designer.cs">
+      <DependentUpon>panelNationalAgency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panels\panelRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panels\panelRole.Designer.cs">
+      <DependentUpon>panelRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panels\panelActivityType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panels\panelActivityType.Designer.cs">
+      <DependentUpon>panelActivityType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panels\panelProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panels\panelProject.Designer.cs">
+      <DependentUpon>panelProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panels\panelOrganization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panels\panelOrganization.Designer.cs">
+      <DependentUpon>panelOrganization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panels\panelPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panels\panelPerson.Designer.cs">
+      <DependentUpon>panelPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="helpers\SQLCon.cs" />
+    <Compile Include="_extensions\ExtendedDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_extensions\SortableBindingList.cs" />
+    <EmbeddedResource Include="formStart.resx">
+      <DependentUpon>formStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSync.resx">
+      <DependentUpon>formSync.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formWordTemplateEdit.resx">
+      <DependentUpon>formWordTemplateEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formMandate.resx">
+      <DependentUpon>formMandate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formedit\formEditCountry.resx">
+      <DependentUpon>formEditCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formedit\formEditMobility.resx">
+      <DependentUpon>formEditMobility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formedit\formEditNationalAgency.resx">
+      <DependentUpon>formEditNationalAgency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formedit\formEditOrganization.resx">
+      <DependentUpon>formEditOrganization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formedit\formEditProjectActivityVariation.resx">
+      <DependentUpon>formEditProjectActivityVariation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formedit\formEditProjectVariation.resx">
+      <DependentUpon>formEditProjectVariation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formedit\formEditProjectActivity.resx">
+      <DependentUpon>formEditProjectActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formedit\formEditOrganizationDescription.resx">
+      <DependentUpon>formEditOrganizationDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formedit\formEditProject.resx">
+      <DependentUpon>formEditProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formedit\formEditPerson.resx">
+      <DependentUpon>formEditPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formMain.resx">
+      <DependentUpon>formMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSelectOrganization.resx">
+      <DependentUpon>formSelectOrganization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSelect.resx">
+      <DependentUpon>formSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panels\panelDistanceBand.resx">
+      <DependentUpon>panelDistanceBand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panels\panelLanguage.resx">
+      <DependentUpon>panelLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panels\panelCountry.resx">
+      <DependentUpon>panelCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panels\panelNationalAgency.resx">
+      <DependentUpon>panelNationalAgency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panels\panelRole.resx">
+      <DependentUpon>panelRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panels\panelActivityType.resx">
+      <DependentUpon>panelActivityType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panels\panelProject.resx">
+      <DependentUpon>panelProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panels\panelOrganization.resx">
+      <DependentUpon>panelOrganization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panels\panelPerson.resx">
+      <DependentUpon>panelPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="assets\NewHeader.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="config.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="fonts\fontawesome-webfont.ttf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\fa-solid-900.ttf" />
+    <None Include="struktura.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\flag_yellow_high_1.ico" />
+    <Content Include="assets\wordlink.odc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
